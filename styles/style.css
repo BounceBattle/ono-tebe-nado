@@ -1,45 +1,76 @@
-    .site_header {
+    .header {
         display: flex;
-        padding: 50px 92px;
+        padding: 92px 50px;
         width: 100%;
-        justify-content: space-around;
-        align-items: center;        
-    }
-    
-    .site_header .header_buttons a ~ .active{
-        text-decoration: none;
-        color: gray;
-        border-bottom: 1px solid;
-        margin-left: 12px;
-    }
-    
-    .site_header .header_buttons a {
-        text-decoration: none;
-        color: black;
-        border-bottom: 0;
+        justify-content: space-between;
+        align-items: center;
+                
     }
 
-        
-    .site_header .logo {
-        width: 148px;
-        height: 105px;
+    .header_menu {
+        width: 388px;
     }
-       
-       .site_header .contacts {
+
+    .header__links-list {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
         color: #000;
-        font-family: Raleway,sans-serif;
-       }
-       
-       .site_header.contacts a{
-        text-decoration: none;
-        color: black;
-        border-bottom: 1px solid;
-       }
-       .site_header .logo svg {
+        font-family: Raleway;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 100%;
+        gap: 10px;
+
+    }
+
+    .header__links-list-item {
+        list-style: circle;
+        text-underline-position: under;
+    }
+
+    .header__links-list-item_no-bullit {
+        list-style: none;
+        
+    }
+
+    .header__link {
+       width: 100%; 
+    }
+
+    .header__link_active {
+        width: 100%;
+    }
+     
+    .header__logo-image  {
         width: 100%;
         height: 100%;
-       }
-       
+        background-size: contain;
+        
+    }
+
+    .header__logo {
+        width: 148px;
+        height: 105px;
+        margin-right: calc(11%);
+    }
+
+    .header__address {
+        width: 240px;
+        height: 97px;
+        color: #000;
+        font-family: Raleway,sans-serif;
+        text-decoration: none;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        text-underline-position: under;
+        
+    }
+
        .cover {
         background: url(../images/cover.jpg), lightgray 50% / cover no-repeat;
         min-height: 757px;
@@ -56,7 +87,7 @@
         width: 100%;
         height: 100%;
         background: black;
-        opacity: .5;
+        opacity: .6;
         position: absolute;
        }
     
@@ -82,7 +113,7 @@
         font-family: Raleway;
         font-size: 100px;
         font-weight: 700;
-        letter-spacing: 30px;
+        word-spacing: 30px;
         text-transform: uppercase;
         padding-left: 50px;
         justify-content: center;
@@ -96,7 +127,7 @@
         font-family: Raleway;
         font-size: 100px;
         font-weight: 700;
-        letter-spacing: 30px;
+        word-spacing: 30px;
         text-transform: uppercase;
         padding-left: 50px;
         justify-content: end;
@@ -109,14 +140,14 @@
         font-family: Raleway;
         font-size: 100px;
         font-weight: 700;
-        letter-spacing: 30px;
+        word-spacing: 30px;
         text-transform: uppercase;
         padding-left: 50px;
         padding-top: 165px;
         white-space: nowrap;
     }
     
-    .cover_description {
+    .cover__description {
         display: flex;
         width: 100%;
         position: absolute;
@@ -161,7 +192,7 @@
         word-spacing: 1rem;
     }
     
-    .padding_30 {
+    .letter-spacing-extended {
         padding-left: 30px;
     }
 
@@ -190,6 +221,9 @@
       grid-auto-rows: 450px;
       grid-column-gap: 25px;
       margin-bottom: 30px;
+      list-style-type: none;
+      flex-wrap: wrap;
+      flex-grow: 1;
   }
 
   .card_type_film {
@@ -242,7 +276,7 @@
       bottom: 0;
   }
 
-  .more {
+  .lots-lots__more {
       margin-left: 90px;
       color: #000;
       font-family: Raleway;
@@ -252,48 +286,6 @@
       line-height: normal;
       border-bottom: 1px solid;
   }
-
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 180px;
-    width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  .footer .contacts {
-    color: #000;
-    font-family: Raleway,sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24.3px;
-    
-   }
-   
-   .footer.contacts a {
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid;
-   }
-
-   .footer__menu-list-item {
-    color: #000;
-    text-align: center;
-    font-family: Raleway;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    
-   }
-
-   .footer__social-list {
-    display: flex;
-    width: 240px;
-    justify-content: space-between;
-   }
 
    .about {
     margin-top: 180px;
@@ -326,7 +318,7 @@
     border-radius: 50%;
  }
 
- .about__logo-image svg{
+ .about__logo-image_background{
     width: 148px;
     height: 114px;
  }
@@ -340,6 +332,7 @@
     letter-spacing: 0em;
     text-align: left;
     margin-bottom: 100px;
+    text-transform: uppercase;
  }
 
  .about__text p {
@@ -351,3 +344,83 @@
     text-align: left;
     margin-bottom: 25px;
  }
+
+ .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 180px;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+
+  }
+
+  .footer__links-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: #000;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    gap: 10px;
+    list-style-type: none;
+  }
+
+  .footer__links-list-item {
+    list-style: circle;
+    text-underline-position: under;
+  }
+
+  .footer__links-list-item_no-bullit {
+    list-style: none;
+  }
+
+  .footer__link {
+       width: 100%; 
+    }
+
+   .header__link_active {
+        width: 100%;
+    }
+ 
+   .footer .contacts {
+    color: #000;
+    font-family: Raleway,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.3px;
+    
+   }
+   
+   .footer.contacts a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid;
+   }
+
+   .footer__menu-list-item {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+   }
+
+   .footer__social-list {
+    display: flex;
+    width: 240px;
+    height: 48px;
+    justify-content: space-between;
+    gap: 12px;
+   } 
+
+.footer__social-icon {
+height: 48px;
+}
